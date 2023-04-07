@@ -1,5 +1,8 @@
 @charset "utf-8";
 
+div#info-volume {
+  margin: 10px;
+}
 img {
   margin: 15px;
 }

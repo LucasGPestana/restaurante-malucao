@@ -18,7 +18,12 @@
       >
         Adicionar Saldo
       </button><br>
+      <div id="info-volume"></div>
+      <label>Volume: </label>
+      <input type="range" id="volume" min="0" max="1" value="0.5" onmousemove="mudarVolume()" />
+      </div>
     </header>
+    <audio loop="loop" autoplay="autoplay"><source src="media/penguin-diner-song.mp3" type="audio/mpeg" /></audio>
     <a id="redic" href=""><img src="images/restaurante-malucao-logo.png" alt="Restaurante do Malucão" onmouseover="mudarOpacidade(this)" onmouseout="voltarOpacidade(this)"/></a>
     <section id="cardapio">
       <h2>Cardápio</h2>
@@ -96,6 +101,7 @@
           style="text-decoration: none; color: white"
           onmouseover="mudarCorFonte(this)"
           onmouseout="voltarCorFonte(this)"
+          target="_blank"
           >Conheça meu GitHub</a
         >
       </p>

@@ -6,6 +6,7 @@ var total = window.document.querySelector('div#total')
 var valor_carteira = window.document.getElementsByTagName('span')[0]
 var valor_gasto = window.document.getElementsByTagName('span')[1]
 var txtValor = window.document.getElementById('txtValor')
+var audio = window.document.getElementsByTagName('audio')[0]
 
 txtValor.focus()
 
@@ -15,6 +16,11 @@ valor_carteira.innerHTML = `<strong>R$${saldo.toFixed(2)}</strong>` // Mostra o 
 function somarSaldo(valor) {
   saldo += valor
   return saldo
+}
+
+function mudarVolume() {
+  var volume = window.document.getElementById('volume')
+  audio.volume = volume.value
 }
 
 function adicionarSaldo() {
