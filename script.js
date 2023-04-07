@@ -18,11 +18,6 @@ function somarSaldo(valor) {
   return saldo
 }
 
-function mudarVolume() {
-  var volume = window.document.getElementById('volume')
-  audio.volume = volume.value
-}
-
 function adicionarSaldo() {
   somarSaldo(Number(txtValor.value))
   txtValor.value = ''
