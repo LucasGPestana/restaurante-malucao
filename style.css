@@ -1,0 +1,27 @@
+@charset "utf-8";
+
+img {
+  margin: 15px;
+}
+body {
+  background-color: rgba(0, 0, 0, 0.811);
+  color: white;
+}
+th {
+  border: solid 1px black;
+  padding: 5px;
+}
+td {
+  border: solid 1px black;
+  padding: 5px;
+}
+button {
+  border-radius: 20px;
+  border: solid 3px black;
+  background-color: rgba(86, 86, 86, 0.811);
+  color: white;
+  padding: 5px;
+}
+input {
+  margin: 5px;
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cardápio</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h3>Carteira: <span style="color: lightgreen"></span></h3>
+      <input type="text" id="txtValor" />
+      <button
+        onclick="adicionarSaldo()"
+        onmouseover="mudarCorFonte(this)"
+        onmouseout="voltarCorFonte(this)"
+      >
+        Adicionar Saldo
+      </button><br>
+    </header>
+    <a id="redic" href=""><img src="images/restaurante-malucao-logo.png" alt="Restaurante do Malucão" onmouseover="mudarOpacidade(this)" onmouseout="voltarOpacidade(this)"/></a>
+    <section id="cardapio">
+      <h2>Cardápio</h2>
+      <p>
+        Analise nossa tabela de pratos e seus respectivos preços antes de pedir.
+      </p>
+    </section>
+    <table>
+      <th>Prato</th>
+      <th>Preço (R$)</th>
+      <tr>
+        <td
+          class="prato"
+          onclick="adicionar(0)"
+          onmouseover="mudarCorFonte(this)"
+          onmouseout="voltarCorFonte(this)"
+        >
+          Filé Mignon
+        </td>
+        <td class="preco">50.00</td>
+      </tr>
+      <tr>
+        <td
+          class="prato"
+          onclick="adicionar(1)"
+          onmouseover="mudarCorFonte(this)"
+          onmouseout="voltarCorFonte(this)"
+        >
+          Pizza
+        </td>
+        <td class="preco">30.00</td>
+      </tr>
+      <tr>
+        <td
+          class="prato"
+          onclick="adicionar(2)"
+          onmouseover="mudarCorFonte(this)"
+          onmouseout="voltarCorFonte(this)"
+        >
+          Hamburger
+        </td>
+        <td class="preco">12.00</td>
+      </tr>
+      <tr>
+        <td
+          class="prato"
+          onclick="adicionar(3)"
+          onmouseover="mudarCorFonte(this)"
+          onmouseout="voltarCorFonte(this)"
+        >
+          Refrigerante
+        </td>
+        <td class="preco">5.50</td>
+      </tr>
+    </table>
+    <section id="carrinho">
+      <h2>Carrinho</h2>
+      <p>Clique no prato que deseja para adicionar ao carrinho.</p>
+      <select id="compras"></select>
+      <div id="total">
+        <h3>Total: <span style="color: red"></span></h3>
+      </div>
+      <button
+        onclick="pagar()"
+        onmouseover="mudarCorFonte(this)"
+        onmouseout="voltarCorFonte(this)"
+      >
+        Pagar
+      </button>
+    </section>
+    <footer>
+      <p>
+        <a
+          href="https://github.com/LucasGPestana"
+          style="text-decoration: none; color: white"
+          onmouseover="mudarCorFonte(this)"
+          onmouseout="voltarCorFonte(this)"
+          >Conheça meu GitHub</a
+        >
+      </p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
