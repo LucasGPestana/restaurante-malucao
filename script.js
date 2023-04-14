@@ -15,7 +15,15 @@ valor_carteira.innerHTML = `<strong>R$${saldo.toFixed(2)}</strong>` // Mostra o 
 // Soma ao saldo um valor definido no input (chamado em adicionarSaldo)
 function somarSaldo(valor) {
   saldo += valor
-  return saldo
+}
+
+// Adiciona no localStorage de saldo o saldo atual para que na próxima visita ao site o saldo seja o mesmo
+function salvarSaldo(saldo) {
+
+  // Verifica se o localStorage é compatível com o navegador
+  if (window.localStorage) {
+    localStorage.setItem('saldo', saldo)
+  }
 }
 
 function adicionarSaldo() {
@@ -23,11 +31,19 @@ function adicionarSaldo() {
   txtValor.value = ''
   valor_carteira.innerHTML = `<strong>R$${saldo.toFixed(2)}</strong>`
   window.alert('Saldo adicionado!')
+
+  salvarSaldo(saldo)
 }
 
 // Executa a medida que se carrega a página
 window.onload = function () {
   window.alert('Seja bem-vindo ao Restaurante do Malucão!')
+
+  // Verifica se a funcionalidade localStorage é compatível com o navegador e se o salvamento local de saldo tem identidade diferente de "null"
+  if (window.localStorage && localStorage.getItem('saldo') !== null) {
+    saldo = Number(localStorage.getItem('saldo'))
+    valor_carteira.innerHTML = `<strong>R$${saldo.toFixed(2)}</strong>`
+  }
 }
 
 // Muda a cor da fonte do objeto passado como parametro
@@ -81,6 +97,7 @@ function pagar() {
     window.alert(
       `Seu saldo atual é de R$${saldo.toFixed(2)}! Obrigado, volte sempre!`
     )
+    salvarSaldo(saldo)
   } else {
     window.alert(
       'Saldo insuficiente para pagar a conta! Por isso, deverá lavar pratos para pagar a dívida.'
