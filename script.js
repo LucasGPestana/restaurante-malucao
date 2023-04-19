@@ -1,4 +1,3 @@
-var itens = []
 var precos = []
 var saldo = 0
 var carrinho = window.document.querySelector('select#compras')
@@ -6,7 +5,7 @@ var total = window.document.querySelector('div#total')
 var valor_carteira = window.document.getElementsByTagName('span')[0]
 var valor_gasto = window.document.getElementsByTagName('span')[1]
 var txtValor = window.document.getElementById('txtValor')
-var audio = window.document.getElementsByTagName('audio')[0]
+var btn_remover = window.document.getElementById('btn_remover')
 
 txtValor.focus()
 
@@ -77,6 +76,12 @@ function adicionar(posicao) {
   carrinho.appendChild(opcao) // Mostra as opções no selection
 
   valor_gasto.innerHTML = `<strong>R$${somar(precos).toFixed(2)}</strong>`
+}
+
+function limparCarrinho() {
+  carrinho.innerHTML = ""
+  precos = []
+  valor_gasto.innerHTML = `<strong>R$0.00</strong>`
 }
 
 // Percorre o array de preços passado como parâmetro, somando cada um de seus itens, e retorna essa soma no final
